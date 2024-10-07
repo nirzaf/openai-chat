@@ -1,4 +1,4 @@
-name: Deploy to GH Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -26,7 +26,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          npm run deploy
+          npx gh-pages -d build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
