@@ -2,7 +2,7 @@
   "name": "openai-chat",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dotnetevangelist.net/openai-chat",
+  "homepage": "https://nirzaf.github.io/openai-chat",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
