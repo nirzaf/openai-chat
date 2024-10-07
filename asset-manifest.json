@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/openai-chat/static/css/main.980c56a9.css",
+    "main.js": "/openai-chat/static/js/main.8d9ab39b.js",
+    "static/js/453.427fad7b.chunk.js": "/openai-chat/static/js/453.427fad7b.chunk.js",
+    "index.html": "/openai-chat/index.html",
+    "main.980c56a9.css.map": "/openai-chat/static/css/main.980c56a9.css.map",
+    "main.8d9ab39b.js.map": "/openai-chat/static/js/main.8d9ab39b.js.map",
+    "453.427fad7b.chunk.js.map": "/openai-chat/static/js/453.427fad7b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.980c56a9.css",
+    "static/js/main.8d9ab39b.js"
+  ]
+}
