@@ -68,3 +68,73 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Deploying to GitHub Pages
+
+To deploy the app to GitHub Pages, follow these steps:
+
+1. Install the `gh-pages` package as a dev dependency:
+
+   ```sh
+   npm install --save-dev gh-pages
+   ```
+
+2. Add the following scripts to your `package.json` file:
+
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+3. Add the `homepage` field to your `package.json` file with the URL of your GitHub Pages site:
+
+   ```json
+   "homepage": "https://<username>.github.io/<repository-name>"
+   ```
+
+4. Create a new GitHub Actions workflow file at `.github/workflows/deploy.yml` with the following content:
+
+   ```yaml
+   name: Deploy to GitHub Pages
+
+   on:
+     push:
+       branches:
+         - main
+
+   jobs:
+     build:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout repository
+           uses: actions/checkout@v2
+
+         - name: Set up Node.js
+           uses: actions/setup-node@v2
+           with:
+             node-version: '14'
+
+         - name: Install dependencies
+           run: npm install
+
+         - name: Build the app
+           run: npm run build
+
+         - name: Deploy to GitHub Pages
+           run: npm run deploy
+           env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   ```
+
+5. Commit and push your changes to the `main` branch:
+
+   ```sh
+   git add .
+   git commit -m "Add GitHub Pages deployment"
+   git push origin main
+   ```
+
+6. Your app should now be deployed to GitHub Pages. You can view it at `https://<username>.github.io/<repository-name>`.
