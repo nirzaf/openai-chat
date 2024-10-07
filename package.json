@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && git config --global user.email 'mfmfazrin1986@gmail.com' && git config --global user.name 'Mohaed Fazrin'",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
