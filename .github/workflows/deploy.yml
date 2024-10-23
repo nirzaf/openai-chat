@@ -50,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'  # Changed from 'build' to 'dist' for Vite projects
+          path: './build'  # Changed from 'build' to 'dist' for Vite projects
 
   deploy:
     needs: build
